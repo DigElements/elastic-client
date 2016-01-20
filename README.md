@@ -12,11 +12,11 @@ Example:
 config='{"host": "http://localhost:9200"}'
 client={{esclient}}></elastic-client>
 
-<search-es 
+<elastic-search 
 client="[[esclient]]"
 index="myindex"
 index-type="[[indexType]]"
-query-results="{{results}}"></search-es>
+query-results="{{results}}"></elastic-search>
 ```
 
 
