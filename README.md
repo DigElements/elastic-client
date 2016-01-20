@@ -1,4 +1,4 @@
-##&lt;elastic-client&gt
+##&lt;elastic-client&gt;
 
 `elastic-client` is an element that makes a connection to an elasticsearch
 server via the standard elasticsearch javascript api.  Once a connection is 
