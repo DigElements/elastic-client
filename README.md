@@ -9,7 +9,7 @@ to access the elastic REST api
 Example:
 ```html
 <elastic-client
-host-url="http://localhost:9200"
+config='{"host": "http://localhost:9200"}'
 client={{esclient}}></elastic-client>
 
 <search-es 
