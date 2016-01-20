@@ -1,0 +1,81 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="./elasticsearch.html">
+
+<!--
+An element which creates and returns a client connection to an Elasticsearch server
+
+Example:
+
+      <elastic-client 
+        config='{
+        "host": "http://localhost:9200",
+        "log": "trace"}'>
+      </elastic-client>
+
+@demo demo/index.html
+@hero hero.svg
+-->
+
+<script>
+  'use strict';
+
+  Polymer({
+    is: 'elastic-client',
+
+    properties: {
+      /** 
+       * An object that contains the elasticsearch client construction configuration 
+       * options.
+       * Example:
+       *
+       *     <elastic-client 
+       *         config='{"host": "http://localhost:9200"}'>
+       *     </elastic-client>
+       *
+       * The complete configuration options reference is found in the 
+       * Elasticsearch documentation here: 
+       * https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/ configuration.html#config-options
+       */
+      config: {
+        type: Object,
+        observer: '_createEsClient'
+      },
+
+      /**
+       * an instance of elasticsearch.Client.  See 
+       * https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/index.html 
+       * for elasticsearch.js client API documentation.
+       */
+
+      client: {
+        type: Object,
+        notify: true
+      }
+    },
+    _createEsClient: function(config) {
+      this.client = new elasticsearch.Client(config);
+
+      this.client.ping({
+        requestTimeout: 30000,
+        hello: 'elasticsearch'
+      })
+      .then(function () {
+        console.log('elasticsearch cluster is up'); 
+      })
+      .catch(function(error) {
+        console.error('elasticsearch cluster is down!', error);
+      });
+    }
+  });
+
+</script>

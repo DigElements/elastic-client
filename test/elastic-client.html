@@ -1,0 +1,52 @@
+<!doctype html>
+<!--
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<html>
+<head>
+  <title>iron-ajax</title>
+
+  <script src="../../webcomponentsjs/webcomponents.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+
+  <link rel="import" href="../../polymer/polymer.html">
+  <link rel="import" href="../elastic-client.html">
+</head>
+<body>
+  <test-fixture id="elastic-client-fixture">
+    <template>
+      <elastic-client config='{"host": "http://localhost:9200"}'>
+      </elastic-client>
+    </template>
+  </test-fixture>
+
+  <script>
+    (function () {
+      'use strict';
+      suite('<elastic-client>', function() {
+        var clientElem;
+
+        setup(function () {
+          clientElem = fixture('elastic-client-fixture');
+        });
+
+        test('defines the config property', function () {
+          expect(clientElem.config).to.be.an('object');
+          expect(clientElem.config.host).to.be.equal('http://localhost:9200');
+        });
+
+        test('defines the client property', function () {
+          expect(clientElem.client).to.be.an('object');
+        });
+      });
+    })();
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "elastic-client",
+  "version": "0.0.1",
+  "authors": [
+    "David Flynt"
+  ],
+  "description": "An element used to create an elasticsearch client",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "elasticsearch",
+    "elastic"
+  ],
+  "main": "elastic-client.html",
+  "license": "http://",
+  "homepage": "https://github.com/DigElements/elastic-client",
+  "ignore": [
+    "/.*",
+    "/test/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0",
+    "elasticsearch": "~10.1.2"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "^3.4.0"
+  }
+}
