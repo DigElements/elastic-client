@@ -19,11 +19,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <body unresolved>
 
     <p>An example of <code>&lt;elastic-client&gt;</code></p>
-    <p>(check console output)</p>
-
+    <template is="dom-bind">
       <elastic-client 
-        config='{"host": "http://localhost:9200"}' client="{{client}}">
+        config='{"host": "http://localhost:9200"}' 
+        client="{{client}}"
+        cluster-status="{{my-status}}">
       </elastic-client>
 
+      <p>Elasticsearch cluster status: <strong>{{my-status}}</strong></p>
+    </template>
   </body>
 </html>
