@@ -10,7 +10,7 @@ Example:
 ```html
 <elastic-client
 config='{"host": "http://localhost:9200"}'
-client={{esclient}}></elastic-client>
+client="{{esclient}}"></elastic-client>
 
 <elastic-search 
 client="[[esclient]]"
