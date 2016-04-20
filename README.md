@@ -2,7 +2,7 @@
 
 `elastic-client` is an element that makes a connection to an elasticsearch
 server via the standard elasticsearch javascript api.  Once a connection is 
-established, the client property can be used by other elements in the applications
+established, the client property can be used by other elements in your application
 to access the elastic REST api
 
 
