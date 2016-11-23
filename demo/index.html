@@ -23,10 +23,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <elastic-client 
         config='{"host": "http://localhost:9200"}' 
         client="{{client}}"
-        cluster-status="{{my-status}}">
+        cluster-status="{{myStatus}}">
       </elastic-client>
 
-      <p>Elasticsearch cluster status: <strong>{{my-status}}</strong></p>
+      <p>Host: http://localhost:9200</p>
+      <p>Elasticsearch cluster status: <strong>{{myStatus}}</strong></p>
     </template>
   </body>
 </html>

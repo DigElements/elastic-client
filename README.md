@@ -12,12 +12,23 @@ Example:
 config='{"host": "http://localhost:9200"}'
 client="{{esclient}}"></elastic-client>
 
-<elastic-search 
+<elastic-client-search
 client="[[esclient]]"
 index="myindex"
-index-type="[[indexType]]"
-query-results="{{results}}"></elastic-search>
+type="[[indexType]]"
+body='{"query": {"match_all": {}}}'
+results="{{results}}"
+last-error="{{error}}">
+</elastic-client-search>
 ```
 
+## Dependencies
 
+Element dependencies are managed via [Bower](http://bower.io/). You can
+install that via:
 
+    npm install -g bower
+
+Then, go ahead and download the element's dependencies:
+
+    bower install
