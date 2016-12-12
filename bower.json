@@ -1,10 +1,10 @@
 {
   "name": "elastic-client",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "authors": [
     "Next Century Corporation"
   ],
-  "description": "An element used to create an elasticsearch client",
+  "description": "A Polymer Element which creates and returns a client connection to an Elasticsearch server.",
   "keywords": [
     "web-component",
     "polymer",
@@ -19,11 +19,12 @@
     "/test/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.2.0",
-    "dig-common": "DigElements/dig-common#^0.0.4"
+    "polymer": "Polymer/polymer#^1.7.0",
+    "elasticsearch": "^11.0.1",
+    "elastic.js": "DigElements/elastic.js#6639a1030eb071fb762bcdd742fdbf037fb57b24"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "web-component-tester": "^4.0.0"
+    "iron-component-page": "PolymerElements/iron-component-page#^1.1.7",
+    "web-component-tester": "^5.0.0"
   }
 }

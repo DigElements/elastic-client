@@ -1,13 +1,3 @@
-<!doctype html>
-<!--
-Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
 <html>
 <head>
   <title>elastic-client</title>
@@ -30,69 +20,69 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     (function () {
       'use strict';
       suite('<elastic-client>', function() {
-        var component;
+        var element;
 
         setup(function () {
-          component = fixture('elastic-client-fixture');
-          component.config = {
+          element = fixture('elastic-client-fixture');
+          element.config = {
             host: 'http://localhost:9200'
           };
         });
 
         test('defines the config property', function() {
-          expect(component.config).to.be.an('object');
-          expect(component.config.host).to.be.a('string');
-          expect(component.config.host).to.equal('http://localhost:9200');
+          expect(element.config).to.be.an('object');
+          expect(element.config.host).to.be.a('string');
+          expect(element.config.host).to.equal('http://localhost:9200');
         });
 
         test('defines the client property', function() {
-          expect(component.client).to.be.an('object');
-          expect(component.client.transport).to.be.an('object');
+          expect(element.client).to.be.an('object');
+          expect(element.client.transport).to.be.an('object');
           // Check host
-          expect(component.client.transport._config).to.be.an('object');
-          expect(component.client.transport._config.host).to.be.a('string');
-          expect(component.client.transport._config.host).to.equal('http://localhost:9200');
+          expect(element.client.transport._config).to.be.an('object');
+          expect(element.client.transport._config.host).to.be.a('string');
+          expect(element.client.transport._config.host).to.equal('http://localhost:9200');
           // Check headers
-          expect(component.client.transport.connectionPool).to.be.an('object');
-          expect(component.client.transport.connectionPool.index).to.be.an('object');
-          expect(component.client.transport.connectionPool.index['http://localhost:9200/']).to.be.an('object');
-          expect(component.client.transport.connectionPool.index['http://localhost:9200/'].host).to.be.an('object');
-          expect(component.client.transport.connectionPool.index['http://localhost:9200/'].host.headers).to.be.null;
+          expect(element.client.transport.connectionPool).to.be.an('object');
+          expect(element.client.transport.connectionPool.index).to.be.an('object');
+          expect(element.client.transport.connectionPool.index['http://localhost:9200/']).to.be.an('object');
+          expect(element.client.transport.connectionPool.index['http://localhost:9200/'].host).to.be.an('object');
+          expect(element.client.transport.connectionPool.index['http://localhost:9200/'].host.headers).to.be.null;
         });
       });
 
       suite('<elastic-client> with auth', function() {
-        var component;
+        var element;
 
         setup(function () {
-          component = fixture('elastic-client-fixture');
-          component.config = {
+          element = fixture('elastic-client-fixture');
+          element.config = {
             host: 'http://user:password@localhost:9200'
           };
         });
 
         test('defines the config property', function() {
-          expect(component.config).to.be.an('object');
-          expect(component.config.host).to.be.a('string');
-          expect(component.config.host).to.equal('http://user:password@localhost:9200');
+          expect(element.config).to.be.an('object');
+          expect(element.config.host).to.be.a('string');
+          expect(element.config.host).to.equal('http://user:password@localhost:9200');
         });
 
         test('defines the client property', function() {
-          expect(component.client).to.be.an('object');
-          expect(component.client.transport).to.be.an('object');
+          expect(element.client).to.be.an('object');
+          expect(element.client.transport).to.be.an('object');
           // Check host
-          expect(component.client.transport._config).to.be.an('object');
-          expect(component.client.transport._config.host).to.be.a('string');
-          expect(component.client.transport._config.host).to.equal('http://user:password@localhost:9200');
+          expect(element.client.transport._config).to.be.an('object');
+          expect(element.client.transport._config.host).to.be.a('string');
+          expect(element.client.transport._config.host).to.equal('http://user:password@localhost:9200');
           // Check headers
-          expect(component.client.transport.connectionPool).to.be.an('object');
-          expect(component.client.transport.connectionPool.index).to.be.an('object');
-          expect(component.client.transport.connectionPool.index['http://localhost:9200/']).to.be.an('object');
-          expect(component.client.transport.connectionPool.index['http://localhost:9200/'].host).to.be.an('object');
-          expect(component.client.transport.connectionPool.index['http://localhost:9200/'].host.headers).to.be.an('object');
-          expect(component.client.transport.connectionPool.index['http://localhost:9200/'].host.headers.Authorization).to.be.a('string');
+          expect(element.client.transport.connectionPool).to.be.an('object');
+          expect(element.client.transport.connectionPool.index).to.be.an('object');
+          expect(element.client.transport.connectionPool.index['http://localhost:9200/']).to.be.an('object');
+          expect(element.client.transport.connectionPool.index['http://localhost:9200/'].host).to.be.an('object');
+          expect(element.client.transport.connectionPool.index['http://localhost:9200/'].host.headers).to.be.an('object');
+          expect(element.client.transport.connectionPool.index['http://localhost:9200/'].host.headers.Authorization).to.be.a('string');
           // Base 64 encoded 'user:password' is 'dXNlcjpwYXNzd29yZA=='
-          expect(component.client.transport.connectionPool.index['http://localhost:9200/'].host.headers.Authorization).to.equal('Basic dXNlcjpwYXNzd29yZA==');
+          expect(element.client.transport.connectionPool.index['http://localhost:9200/'].host.headers.Authorization).to.equal('Basic dXNlcjpwYXNzd29yZA==');
         });
       });
     })();
