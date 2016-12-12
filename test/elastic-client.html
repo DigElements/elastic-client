@@ -49,6 +49,14 @@
           expect(element.client.transport.connectionPool.index['http://localhost:9200/'].host).to.be.an('object');
           expect(element.client.transport.connectionPool.index['http://localhost:9200/'].host.headers).to.be.null;
         });
+
+        test('clusterStatus is defined', function() {
+          expect(element.clusterStatus).to.be.a('string');
+        });
+
+        test('does not have html content', function() {
+            expect(Polymer.dom(element.root).children.length).to.equal(0);
+        });
       });
 
       suite('<elastic-client> with auth', function() {
@@ -83,6 +91,14 @@
           expect(element.client.transport.connectionPool.index['http://localhost:9200/'].host.headers.Authorization).to.be.a('string');
           // Base 64 encoded 'user:password' is 'dXNlcjpwYXNzd29yZA=='
           expect(element.client.transport.connectionPool.index['http://localhost:9200/'].host.headers.Authorization).to.equal('Basic dXNlcjpwYXNzd29yZA==');
+        });
+
+        test('clusterStatus is defined', function() {
+          expect(element.clusterStatus).to.be.a('string');
+        });
+
+        test('does not have html content', function() {
+            expect(Polymer.dom(element.root).children.length).to.equal(0);
         });
       });
     })();
