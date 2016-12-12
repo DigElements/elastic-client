@@ -8,8 +8,9 @@
   "keywords": [
     "web-component",
     "polymer",
+    "elastic",
     "elasticsearch",
-    "elastic"
+    "elastic.js"
   ],
   "main": "elastic-client.html",
   "license": "http://",
