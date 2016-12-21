@@ -1,10 +1,9 @@
 {
   "name": "elastic-client",
-  "version": "1.0.3",
-  "authors": [
-    "Next Century Corporation"
-  ],
   "description": "A Polymer Element which creates and returns a client connection to an Elasticsearch server.",
+  "version": "1.0.3",
+  "authors": ["Next Century Corporation"],
+  "license": "Apache-2.0",
   "keywords": [
     "web-component",
     "polymer",
