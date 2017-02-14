@@ -1,7 +1,7 @@
 {
   "name": "elastic-client",
   "description": "A Polymer Element which creates and returns a client connection to an Elasticsearch server.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "authors": ["Next Century Corporation"],
   "license": "Apache-2.0",
   "keywords": [
@@ -20,8 +20,8 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.7.0",
-    "elasticsearch": "^11.0.1",
-    "elasticjs-import": "DigElements/elasticjs-import#~1.0.0"
+    "elasticsearchjs-import": "DigElements/elasticsearchjs-import#~1.0.0",
+    "elasticjs-import": "DigElements/elasticjs-import#~1.0.1"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.1.7",
