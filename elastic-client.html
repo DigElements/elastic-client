@@ -94,8 +94,7 @@ A Polymer Element which creates and returns a client connection to an Elasticsea
       var self = this;
 
       this.client.ping({
-        requestTimeout: 30000,
-        hello: 'elasticsearch'
+        requestTimeout: 30000
       })
       .then(function () {
         self.clusterStatus = 'up';
